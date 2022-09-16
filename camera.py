@@ -2,9 +2,9 @@ import cv2
 import numpy as np
 
 def mostrar(mask, cor):
-    contornos,_= cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    contornos,_= cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) # calcula os contornos mais próximos do objeto
     for c in contornos:
-        area=cv2.contourArea(c)
+        area=cv2.contourArea(c) # area do contorno
         if area > 3000:
             m= cv2.moments(c)
             if(m["m00"]==0): m["m00"]==1
